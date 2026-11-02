@@ -8,9 +8,10 @@ Buka `index.html`, atau jalankan `python -m http.server` lalu buka http://localh
 Deploy ke Vercel: unggah folder ini sebagai proyek statis (Framework Preset: Other, tanpa build command, output di root).
 
 ## Fitur
-- 6 level; level terbuka berurutan setelah level sebelumnya dimenangkan.
+- 10 level; level terbuka berurutan setelah level sebelumnya dimenangkan.
 - 6 jenis kerusakan, masing-masing dengan minigame singkat.
 - Teknisi yang berjalan ke PC, siswa yang duduk di PC dan lari keluar saat PC rusak mendadak.
+- 3 power khusus interaktif: Pemindai (ungkap kerusakan), Bekukan Waktu, Perbaikan Kilat; jatah naik tiap level dan bonus combo memberi Pemindai.
 - Mode terang/gelap otomatis, papan skor, dan penyimpanan lokal.
 
 ## Struktur folder

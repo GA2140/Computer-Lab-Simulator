@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <link href="assets/brand/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/components.css" rel="stylesheet">
+    <link href="css/pages.css" rel="stylesheet">
+    <title>Panduan — LabFix</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <img alt="" height="32" src="assets/brand/logo.svg" width="32">
+        <span>LabFix</span>
+      </a>
+      <nav aria-label="Navigasi utama">
+        <a href="index.html">Menu</a>
+        <a href="how-to-play.html">Panduan</a>
+        <a href="scores.html">Papan Skor</a>
+      </nav>
+    </header>
+    <div class="banner" hidden id="banner" role="status"></div>
+    <main class="container prose">
+      <h1>Panduan bermain</h1>
+      <div id="rules"></div>
+      <p>
+        <a class="btn btn-primary" href="index.html">Kembali ke menu</a>
+      </p>
+    </main>
+    <div aria-live="polite" id="toast"></div>
+    <script src="js/core/data.js"></script>
+    <script src="js/core/storage.js"></script>
+    <script src="js/core/ui.js"></script>
+    <script src="js/pages/rules.js"></script>
+  </body>
+</html>

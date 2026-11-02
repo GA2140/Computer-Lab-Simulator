@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <link href="assets/brand/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/components.css" rel="stylesheet">
+    <link href="css/pages.css" rel="stylesheet">
+    <title>Papan Skor — LabFix</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <img alt="" height="32" src="assets/brand/logo.svg" width="32">
+        <span>LabFix</span>
+      </a>
+      <nav aria-label="Navigasi utama">
+        <a href="index.html">Menu</a>
+        <a href="how-to-play.html">Panduan</a>
+        <a href="scores.html">Papan Skor</a>
+      </nav>
+    </header>
+    <div class="banner" hidden id="banner" role="status"></div>
+    <main class="container">
+      <h1>Papan skor</h1>
+      <div class="stat-row">
+        <span class="chip">
+          <small>Profil</small>
+          <b id="profile-name"></b>
+        </span>
+        <span class="chip">
+          <small>Total bintang</small>
+          <b id="total-stars">0/9</b>
+        </span>
+      </div>
+      <section class="section">
+        <h2>Rekor per level</h2>
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Level</th>
+                <th>Rekor</th>
+                <th>Bintang</th>
+              </tr>
+            </thead>
+            <tbody id="records"></tbody>
+          </table>
+        </div>
+      </section>
+      <section class="section">
+        <h2>Riwayat 10 terakhir</h2>
+        <div class="empty" hidden id="empty">Belum ada riwayat. Mainkan satu shift untuk mengisinya.</div>
+        <div class="table-wrap" id="history-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Waktu</th>
+                <th>Level</th>
+                <th>Hasil</th>
+                <th>Skor</th>
+                <th>Bintang</th>
+              </tr>
+            </thead>
+            <tbody id="history"></tbody>
+          </table>
+        </div>
+      </section>
+      <p class="muted">Data disimpan lokal di browser ini saja dan tidak dikirim ke mana pun.</p>
+      <button class="btn btn-danger" id="btn-reset" type="button">Reset data</button>
+      <button class="btn" id="btn-logout" type="button">Keluar akun</button>
+    </main>
+    <div aria-labelledby="reset-title" aria-modal="true" class="modal" hidden id="modal-reset" role="dialog">
+      <div class="modal-box">
+        <h2 id="reset-title">Hapus semua data?</h2>
+        <p>Progres, rekor, dan riwayat akun ini akan dihapus permanen. Akunmu tetap ada.</p>
+        <div class="modal-actions">
+          <button class="btn btn-danger" id="reset-yes" type="button">Hapus</button>
+          <button class="btn" id="reset-no" type="button">Batal</button>
+        </div>
+      </div>
+    </div>
+    <div aria-live="polite" id="toast"></div>
+    <script src="js/core/data.js"></script>
+    <script src="js/core/storage.js"></script>
+    <script src="js/core/ui.js"></script>
+    <script src="js/pages/scores.js"></script>
+  </body>
+</html>
