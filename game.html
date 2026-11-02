@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <link href="assets/brand/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/components.css" rel="stylesheet">
+    <link href="css/pages.css" rel="stylesheet">
+    <link href="css/art.css" rel="stylesheet">
+    <link href="css/game.css" rel="stylesheet">
+    <title>Bermain — LabFix</title>
+  </head>
+  <body>
+    <header class="hud">
+      <span class="hud-title" id="hud-level"></span>
+      <span class="chip" id="hud-time-chip">
+        <small>Waktu</small>
+        <b id="hud-time">00:00</b>
+      </span>
+      <span class="chip">
+        <small>Skor</small>
+        <b id="hud-score">0</b>
+      </span>
+      <span class="chip">
+        <small>Combo</small>
+        <b id="hud-combo">0</b>
+      </span>
+      <span class="chip">
+        <small>PC siap</small>
+        <b id="hud-ready">0/0</b>
+      </span>
+      <button class="btn" id="btn-pause" type="button">Jeda</button>
+      <button class="btn" id="btn-help" type="button">Panduan</button>
+      <button class="btn" id="btn-exit" type="button">Keluar</button>
+      <div class="timebar">
+        <i id="hud-bar"></i>
+      </div>
+    </header>
+    <div class="banner" hidden id="banner" role="status"></div>
+    <main class="container">
+      <section class="card briefing" id="briefing">
+        <h1 id="brief-title"></h1>
+        <ul id="brief-info"></ul>
+        <button class="btn btn-primary" id="btn-start" type="button">Mulai Shift</button>
+      </section>
+      <div class="layout">
+        <div class="stage" id="stage">
+          <div aria-label="Grid PC lab" class="grid is-locked" id="grid"></div>
+        </div>
+        <aside aria-label="Panel inspeksi" class="panel" id="panel">
+          <p class="muted" id="panel-hint">Pilih PC bermasalah untuk memeriksa gejalanya.</p>
+          <div hidden id="panel-body">
+            <h2 id="panel-title"></h2>
+            <p>Gejala:</p>
+            <ul id="panel-symptoms"></ul>
+            <div class="actions" id="actions"></div>
+            <p class="muted">Pintasan: tombol 1–6. Esc menutup panel.</p>
+            <button class="btn" id="panel-close" type="button">Tutup panel</button>
+          </div>
+        </aside>
+      </div>
+    </main>
+    <div aria-labelledby="pause-t" aria-modal="true" class="modal" hidden id="modal-pause" role="dialog">
+      <div class="modal-box">
+        <h2 id="pause-t">Shift dijeda</h2>
+        <p>Timer berhenti sampai kamu menekan Lanjutkan.</p>
+        <div class="modal-actions">
+          <button class="btn btn-primary" id="btn-resume" type="button">Lanjutkan</button>
+        </div>
+      </div>
+    </div>
+    <div aria-labelledby="help-t" aria-modal="true" class="modal" hidden id="modal-help" role="dialog">
+      <div class="modal-box">
+        <h2 id="help-t">Panduan</h2>
+        <div id="help-body"></div>
+        <div class="modal-actions">
+          <button class="btn btn-primary" id="help-close" type="button">Tutup panduan</button>
+        </div>
+      </div>
+    </div>
+    <div aria-labelledby="exit-t" aria-modal="true" class="modal" hidden id="modal-exit" role="dialog">
+      <div class="modal-box">
+        <h2 id="exit-t">Keluar dari shift?</h2>
+        <p>Progres shift ini akan hilang dan tidak bisa dilanjutkan.</p>
+        <div class="modal-actions">
+          <button class="btn btn-danger" id="exit-yes" type="button">Keluar</button>
+          <button class="btn" id="exit-no" type="button">Kembali</button>
+        </div>
+      </div>
+    </div>
+    <div aria-labelledby="res-title" aria-modal="true" class="modal" hidden id="modal-result" role="dialog">
+      <div class="modal-box">
+        <h2 id="res-title"></h2>
+        <p>
+          Skor akhir:
+          <strong id="res-score">0</strong>
+        </p>
+        <div id="res-stars"></div>
+        <p class="badge badge-ok" hidden id="res-record">Rekor baru!</p>
+        <ul id="res-stats"></ul>
+        <div class="modal-actions">
+          <button class="btn btn-primary" id="res-retry" type="button">Ulangi</button>
+          <button class="btn" hidden id="res-next" type="button">Level Berikutnya</button>
+          <button class="btn" id="res-menu" type="button">Menu</button>
+        </div>
+      </div>
+    </div>
+    <div aria-labelledby="mg-t" aria-modal="true" class="modal" hidden id="modal-mg" role="dialog">
+      <div class="modal-box">
+        <h2 id="mg-t"></h2>
+        <p class="muted" id="mg-hint"></p>
+        <div class="mg" id="mg-box"></div>
+      </div>
+    </div>
+    <div aria-live="polite" id="toast"></div>
+    <script src="js/core/data.js"></script>
+    <script src="js/core/storage.js"></script>
+    <script src="js/core/ui.js"></script>
+    <script src="js/core/art.js"></script>
+    <script src="js/game/minigames.js"></script>
+    <script src="js/game/engine.js"></script>
+    <script src="js/pages/play.js"></script>
+  </body>
+</html>

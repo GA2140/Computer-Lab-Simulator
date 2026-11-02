@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <link href="assets/brand/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/components.css" rel="stylesheet">
+    <link href="css/pages.css" rel="stylesheet">
+    <link href="css/art.css" rel="stylesheet">
+    <title>LabFix — Simulasi Lab Komputer</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <img alt="" height="32" src="assets/brand/logo.svg" width="32">
+        <span>LabFix</span>
+      </a>
+      <nav aria-label="Navigasi utama">
+        <a href="index.html">Menu</a>
+        <a href="how-to-play.html">Panduan</a>
+        <a href="scores.html">Papan Skor</a>
+      </nav>
+    </header>
+    <div class="banner" hidden id="banner" role="status"></div>
+    <main class="container">
+      <section class="hero">
+        <div class="hero-art" id="hero-art"></div>
+        <h1>LabFix</h1>
+        <p class="muted">Jadilah petugas lab: baca gejala, pilih tindakan, dan siapkan semua PC sebelum waktu habis.</p>
+        <div class="hero-row">
+          <strong id="greeting"></strong>
+          <button class="btn" id="btn-logout" type="button">Keluar akun</button>
+          <span class="chip">
+            <small>Total bintang</small>
+            <b id="total-stars">0/9</b>
+          </span>
+        </div>
+      </section>
+      <section aria-labelledby="h-level">
+        <h2 id="h-level">Pilih level</h2>
+        <div class="levels" id="levels"></div>
+      </section>
+      <p class="links">
+        <a href="how-to-play.html">Panduan bermain</a>
+        <a href="scores.html">Papan skor</a>
+      </p>
+    </main>
+    <div aria-live="polite" id="toast"></div>
+    <script src="js/core/data.js"></script>
+    <script src="js/core/storage.js"></script>
+    <script src="js/core/ui.js"></script>
+    <script src="js/core/art.js"></script>
+    <script src="js/pages/home.js"></script>
+  </body>
+</html>

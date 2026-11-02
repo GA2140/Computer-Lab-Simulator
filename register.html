@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <link href="assets/brand/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/components.css" rel="stylesheet">
+    <link href="css/pages.css" rel="stylesheet">
+    <title>Daftar — LabFix</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="login.html">
+        <img alt="" height="32" src="assets/brand/logo.svg" width="32">
+        <span>LabFix</span>
+      </a>
+    </header>
+    <div class="banner" hidden id="banner" role="status"></div>
+    <main class="container auth">
+      <section class="card">
+        <h1>Daftar</h1>
+        <p class="muted">Buat akun untuk menyimpan progres dan rekor di browser ini.</p>
+        <form data-mode="register" id="auth-form" novalidate>
+          <label for="f-user">Nama pengguna</label>
+          <input autocomplete="username" class="field" id="f-user" maxlength="16" type="text">
+          <label for="f-pass">Kata sandi</label>
+          <input autocomplete="new-password" class="field" id="f-pass" type="password">
+          <label for="f-pass2">Ulangi kata sandi</label>
+          <input autocomplete="new-password" class="field" id="f-pass2" type="password">
+          <p class="error" id="auth-error" role="alert"></p>
+          <button class="btn btn-primary" type="submit">Daftar</button>
+        </form>
+        <p>
+          Sudah punya akun?
+          <a href="login.html">Masuk</a>
+        </p>
+      </section>
+    </main>
+    <div aria-live="polite" id="toast"></div>
+    <script src="js/core/data.js"></script>
+    <script src="js/core/storage.js"></script>
+    <script src="js/core/ui.js"></script>
+    <script src="js/pages/auth.js"></script>
+  </body>
+</html>
